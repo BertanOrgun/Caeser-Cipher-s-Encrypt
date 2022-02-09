@@ -14,8 +14,21 @@ def encrypt(plain_text , shift_amount):
     cipher_text += new_letter
   print(f"your encrypted word is {cipher_text}")
 
+def decrypt(plain_text , shift_amount):
+   cipher_text = ""
+   for letter in plain_text:
+    position = alphabet.index(letter)
+    new_position = position - shift_amount
+    new_letter = alphabet[new_position]
+    cipher_text += new_letter
 
-encrypt(plain_text = text , shift_amount = shift)
+    print(f"your decrypted word is {cipher_text}")
+
+
+if direction == "encrypt"  :
+ encrypt(plain_text = text , shift_amount = shift)
+else: 
+ decrypt(plain_text = text , shift_amount = shift)
 
   
     #TODO-2: Inside the 'encrypt' function, shift each letter of the 'text' forwards in the alphabet by the shift amount and print the encrypted text.  
